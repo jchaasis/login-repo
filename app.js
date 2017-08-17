@@ -128,19 +128,18 @@ server.post('/create', function(req, res){
                         password: newPassword,
                         pokes: 0};
 
-              res.send(`Thank you for joining! Please return to the homepage and login!`)
+              req.session.who = newUser;
+
+
         } else {
           res.send(`Invalid submission, please go back and try again.`);
+
+          return
         }
   }
   users.push(newUser);
 
-  //now that the new user has been added, push them to the home page.
-//   if (newser !== null){
-//     req.session.who = user;
-//     res.redirect('/home');
-//
-//
+
 res.redirect('/home');
 console.log(users);
 
