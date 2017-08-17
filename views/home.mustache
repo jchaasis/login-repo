@@ -2,11 +2,23 @@
 <html>
 
 <head>
-  <title></title>
+  <title>Home Page</title>
 <head>
 
 <body>
-<h1>Welcome home, {{username}}</h1>
+
+    <h1>Welcome home, {{ username }}</h1>
+
+    <form method="post" action="/poke">
+        <input type="submit" value="Poke" id="poke">
+        <label for="poke">Total Pokes: {{ pokes }} </label>
+    </form>
+
+    <br>
+
+    <form method="post" action="/logout">
+      <input type="submit" value="Logout">
+    </form>
 </body>
 
 </html>
